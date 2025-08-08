@@ -1,0 +1,37 @@
+line-length = 79
+exclude = [".venv/"]
+
+[lint]
+extend-select = [
+    "I",
+    "E",
+    "W",
+    "F",
+    "C",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D201",
+    "D202",
+    "D204",
+    "D205",
+    "D209",
+    "ERA",
+    "RUF022",
+]
+preview = true
+
+[lint.extend-per-file-ignores]
+"test*.py" = ["D"]
+
+
+[lint.isort]
+combine-as-imports = true
+order-by-type = false
+
+[lint.flake8-quotes]
+inline-quotes = "single"
+
+[format]
+quote-style = "single"
