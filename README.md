@@ -53,3 +53,6 @@ $ task_tracker list
 $ task_tracker list todo
 | 4 | Some very long name for a very very... |   todo    |2025-08-09T07:00:00.000000|2025-08-09T07:00:00.000000|
 ```
+## Credits
+- Developer: [Me](https://github.com/NovaHFly)
+- Project idea: [Roadmap.sh](https://roadmap.sh/projects/task-tracker)
