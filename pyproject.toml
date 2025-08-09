@@ -5,3 +5,13 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+[project.scripts]
+task_tracker = 'task_tracker.__main__:_main_cli'
+
+[tool.hatch.build.targets.wheel]
+packages = ['task_tracker']
+
+[build-system]
+requires = ['hatchling >= 1.26']
+build-backend = 'hatchling.build'

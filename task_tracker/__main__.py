@@ -8,7 +8,7 @@ def _construct_argparser() -> ArgumentParser:
 
 
 def _main_cli():
-    args = _construct_argparser().parse_args()
+    print('Hello, world!')
 
 
 if __name__ == '__main__':
