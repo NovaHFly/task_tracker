@@ -18,7 +18,7 @@ def _format_task_message(
     description_length: int | None = DEFAULT_DESCRIPTION_LENGTH,
 ) -> str:
     if description_length is None:
-        description_str = task.description
+        description_str = f'{task.description: ^{len(task.description) + 2}}'
     else:
         truncated_description = shorten(
             task.description,
@@ -39,6 +39,9 @@ def _construct_argparser() -> ArgumentParser:
 
     add_subcommand = subparsers.add_parser('add')
     add_subcommand.add_argument('description')
+
+    view_subcommand = subparsers.add_parser('view')
+    view_subcommand.add_argument('id', type=int)
 
     update_subcommand = subparsers.add_parser('update')
     update_subcommand.add_argument('id', type=int)
@@ -77,6 +80,14 @@ def _main_cli():
         case 'add':
             task = create_task(args.description)
             print(_format_task_message(task))
+
+        case 'view':
+            print(
+                _format_task_message(
+                    database[args.id],
+                    description_length=None,
+                )
+            )
 
         case 'update':
             task = update_task(
