@@ -22,30 +22,34 @@ $ task_tracker add "Wash dishes"
 ```
 - View task details. Shows full task description (Even if it's too long)
 ```bash
-$ task_tracker view <id>
-| 4 | Some very long name for a very very long and tedious task |   todo    |2025-08-09T07:00:00.000000|2025-08-09T06:00:00.000000|
+$ task_tracker view 4
+| 4 | Some very long name for a very very long and tedious task |   todo    |2025-08-09T07:00:00.000000|2025-08-09T07:00:00.000000|
 ```
 - Update task description
 ```bash
-$ task_tracker update <id> <description>
+$ task_tracker update 1 "Play with cat"
 | 1 |             Play with cat              |   todo    |2025-08-09T06:00:00.000000|2025-08-09T08:00:00.000000|
 ```
 - Delete task
 ```bash
-$ task_tracker delete <id>
-| 1 |             Play with cat              |   todo    |2025-08-09T06:00:00.000000|2025-08-09T08:00:00.000000|
+$ task_tracker delete 3
+| 3 |         Write task tracker app         |   done    |2025-08-09T06:30:00.000000|2025-08-09T08:00:00.000000|
 ```
 - Update task status. Available statuses:
   - todo
   - in-progress
   - done
 ```bash
-$ task_tracker mark <id> <status>
+$ task_tracker mark 1 in-progress
 | 1 |             Play with cat              |in-progress|2025-08-09T06:00:00.000000|2025-08-09T08:00:00.000000|
 ```
 - List tasks with filtering by status. If no status provided, show all tasks.
 ```bash
-$ task_tracker list [<status>]
+$ task_tracker list
 | 1 |             Play with cat              |in-progress|2025-08-09T06:00:00.000000|2025-08-09T08:00:00.000000|
-| 4 | Some very long name for a very very... |   todo    |2025-08-09T07:00:00.000000|2025-08-09T06:00:00.000000|
+| 4 | Some very long name for a very very... |   todo    |2025-08-09T07:00:00.000000|2025-08-09T07:00:00.000000|
+```
+```bash
+$ task_tracker list todo
+| 4 | Some very long name for a very very... |   todo    |2025-08-09T07:00:00.000000|2025-08-09T07:00:00.000000|
 ```
