@@ -11,3 +11,6 @@ wheels/
 
 # Devnotes
 *.txt
+
+# Byproducts
+*.json
